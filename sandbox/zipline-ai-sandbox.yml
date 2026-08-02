@@ -1,0 +1,32 @@
+generated: '2026-07-21'
+method: searched
+source: https://zipline.ai/docs/getting_started/Local_Sandbox
+name: Chronon Local Sandbox
+summary: >-
+  A self-contained local environment (Docker / docker-compose) for exploring the
+  open-source Chronon project without access to a Zipline deployment. Lets a
+  developer define features with GroupBy and Join, backfill training data, upload
+  feature data to a local KV store and fetch it, and measure online/offline
+  consistency.
+requirements:
+  - Docker
+setup:
+  - "curl -o docker-compose.yml https://chronon.ai/docker-compose.yml"
+  - "docker-compose up"
+  - "Ready once output shows 'only showing top 20 rows'."
+sample_data:
+  location: https://github.com/zipline-ai/chronon/blob/main/api/python/test/sample/data
+  description: Fabricated raw data (four tables) shipped for the fraud-return example walkthrough.
+example_entities:
+  - quickstart.demo_v1   # sample join used in Fetcher API examples
+local_fetcher: http://localhost:9000
+excludes:
+  - Zipline Hub UI or automated scheduling
+  - Online serving infrastructure
+  - Streaming pipelines
+notes: >-
+  This is a developer/dev sandbox (not a hosted test tenant with test
+  credentials). The full Zipline platform Quickstart (AI agent, VS Code
+  extension, Hub UI, automated scheduling, online serving) requires a Zipline
+  subscription. No test API keys, test cards, or hosted test tokens are
+  published — the sandbox runs entirely locally.

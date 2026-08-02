@@ -1,0 +1,28 @@
+generated: '2026-07-21'
+method: searched
+source: https://zipline.ai/docs/running_on_zipline_hub/Auth ; https://zipline.ai/docs/setup/Fetcher_API
+standards:
+  - id: oauth2
+    conforms: true
+    evidence: Frontend login via OAuth 2.0 (Google, GitHub) with JWT issuance.
+  - id: oidc
+    conforms: true
+    evidence: Enterprise SSO via OIDC; backend validates signed JWTs via JWKS.
+  - id: saml2
+    conforms: true
+    evidence: Enterprise SSO via SAML; documented SAML post-login redirect handling.
+  - id: rfc8628-device-authorization
+    conforms: true
+    evidence: CLI `zipline auth login` authenticates via the device authorization flow (RFC 8628).
+  - id: jwt
+    conforms: true
+    evidence: Backend services validate signed JWTs statelessly.
+  - id: jwks
+    conforms: true
+    evidence: AUTH_JWKS_URL exposes a JWKS endpoint for stateless token validation.
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: Fetcher API uses a custom result/error envelope (results[].status, errors[]), not application/problem+json.
+  - id: rbac
+    conforms: true
+    evidence: Role-based authorization; Workflow Status API requires viewer access.

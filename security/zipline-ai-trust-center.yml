@@ -1,0 +1,17 @@
+generated: '2026-07-21'
+method: searched
+probe: true
+source: https://zipline.ai/ (footer "trust" link)
+url: https://app.vanta.com/zipline.ai/trust/iovlj47d01ed18gx0x8u8
+platform: Vanta Trust Center
+certifications: []
+evidence:
+  - source: https://zipline.ai/
+    detail: Homepage links a Vanta-hosted trust center for zipline.ai.
+notes: >-
+  Zipline AI operates a Vanta-hosted trust center. The page is a JavaScript
+  single-page app, so the specific certifications listed (e.g. SOC 2) could not
+  be machine-extracted from the raw HTML and are intentionally left empty rather
+  than assumed. Visit the URL to review the current certification set and request
+  documents. No `type: Compliance` pointer is emitted because no certification
+  was verified from the fetched content.

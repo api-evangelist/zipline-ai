@@ -1,0 +1,52 @@
+generated: '2026-07-21'
+method: searched
+source: https://zipline.ai/docs/reference/cli ; https://zipline.ai/docs/running_on_zipline_hub/Auth
+name: zipline
+summary: >-
+  First-party command-line tool for compiling and running Zipline / Chronon
+  pipelines, and for authenticating against a Zipline Hub deployment.
+install:
+  - method: pip
+    command: pip install zipline-ai
+    package: zipline-ai
+    registry: https://pypi.org/project/zipline-ai/
+commands:
+  - name: compile
+    summary: Compile Chronon configs.
+    usage: zipline compile [OPTIONS]
+    options:
+      - flag: --ignore-python-errors
+        description: Allow compilation to proceed even with Python errors (useful for testing).
+      - flag: --force
+        description: Force compilation to proceed even with errors.
+      - flag: --dry-run
+        description: Perform a dry run without writing any files.
+  - name: run
+    summary: Run a Zipline pipeline.
+    usage: zipline run [OPTIONS] CONF
+    args:
+      - name: CONF
+        description: Path to the compiled conf (e.g. compiled/joins/team/my_join).
+    key_options:
+      - "-e, --env (default dev): running environment"
+      - "-m, --mode: pipeline mode"
+      - "--ds / --start-ds / --end-ds: partition range to backfill"
+      - "--parallelism: split the backfill range into N parallel tasks"
+      - "--spark-version (default 4.0), --spark-submit-path"
+      - "--kafka-bootstrap: Kafka bootstrap server host:port (streaming)"
+      - "--latest-savepoint / --custom-savepoint / --no-savepoint: streaming deploy savepoint control"
+      - "--version-check: redeploy streaming job if local version differs"
+  - name: auth
+    summary: Authenticate the CLI against a Zipline Hub deployment.
+    usage: zipline auth [SUBCOMMAND]
+    subcommands:
+      - name: login
+        description: >-
+          Device authorization flow (RFC 8628) — opens a device verification URL,
+          then the CLI receives and stores JWTs used against backend services.
+      - name: get-access-token
+        description: Print a short-lived bearer token for use from scripts (e.g. the Workflow Status API).
+key_flows:
+  - Device-login for CLI (zipline auth login) via RFC 8628 device authorization flow.
+  - Compile Chronon configs then run backfill / streaming / upload pipelines.
+  - Mint short-lived JWTs to call the Workflow Status API from automation.

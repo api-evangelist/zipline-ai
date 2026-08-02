@@ -1,0 +1,29 @@
+generated: '2026-07-21'
+method: searched
+source: https://pypi.org/project/chronon-ai/ ; https://pypi.org/project/zipline-ai/
+packages:
+  - language: python
+    registry: pypi
+    name: chronon-ai
+    version: 0.0.113
+    url: https://pypi.org/project/chronon-ai/
+    install: pip install chronon-ai
+    summary: Chronon python API library (ai.chronon) — author GroupBy/Join/Source/Aggregation feature definitions.
+    official: true
+  - language: python
+    registry: pypi
+    name: zipline-ai
+    version: 1.18.1
+    url: https://pypi.org/project/zipline-ai/
+    install: pip install zipline-ai
+    summary: CLI tool for the Zipline AI platform (the `zipline` command — compile/run/auth).
+    homepage: https://zipline.ai
+    repository: https://github.com/zipline-ai/chronon/
+    docs: https://docs.zipline.ai
+    official: true
+notes: >-
+  Zipline AI's client surface is Python-first. chronon-ai provides the ai.chronon
+  authoring API; zipline-ai ships the `zipline` CLI binary (also catalogued in
+  cli/). The core engine (Chronon) is open source at github.com/zipline-ai/chronon
+  (Scala). No first-party JavaScript, Java, Go, Ruby, or .NET client library was
+  found in the public registries.

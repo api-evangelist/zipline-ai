@@ -1,0 +1,69 @@
+# Zipline AI Documentation for LLMs
+
+> Zipline AI is automated data infrastructure for ML & AI, built on Chronon for unified batch and streaming feature engineering.
+
+This file contains links to LLM-optimized documentation in markdown format.
+
+## Docs
+
+- [Introduction](https://zipline.ai/docs/getting_started/Introduction/llms.txt): Getting Started
+- [Quickstart](https://zipline.ai/docs/getting_started/Quickstart/llms.txt): Getting Started
+- [Benefits](https://zipline.ai/docs/getting_started/Benefits/llms.txt): Getting Started
+- [Local Sandbox](https://zipline.ai/docs/getting_started/Local_Sandbox/llms.txt): Getting Started
+- [GroupBy](https://zipline.ai/docs/authoring_features/GroupBy/llms.txt): Authoring Features
+- [Join](https://zipline.ai/docs/authoring_features/Join/llms.txt): Authoring Features
+- [SCD2](https://zipline.ai/docs/authoring_features/SCD2/llms.txt): Authoring Features
+- [Chaining Features](https://zipline.ai/docs/authoring_features/ChainingFeatures/llms.txt): Authoring Features
+- [Sources](https://zipline.ai/docs/authoring_features/Source/llms.txt): Authoring Features
+- [Entity Source](https://zipline.ai/docs/authoring_features/EntitySource/llms.txt): Authoring Features
+- [Staging Query](https://zipline.ai/docs/authoring_features/StagingQuery/llms.txt): Authoring Features
+- [Schedules](https://zipline.ai/docs/authoring_features/Schedules/llms.txt): Authoring Features
+- [Derived Features](https://zipline.ai/docs/authoring_features/DerivedFeatures/llms.txt): Authoring Features
+- [Bootstrap](https://zipline.ai/docs/authoring_features/Bootstrap/llms.txt): Authoring Features
+- [Naming and Versioning](https://zipline.ai/docs/authoring_features/NamingAndVersioning/llms.txt): Authoring Features
+- [ExternalSource](https://zipline.ai/docs/authoring_features/ExternalSource/llms.txt): Authoring Features
+- [External Sources (REST & GraphQL)](https://zipline.ai/docs/authoring_features/ExternalSource_REST/llms.txt): Authoring Features
+- [Secrets Management](https://zipline.ai/docs/authoring_features/SecretsManagement/llms.txt): Authoring Features
+- [Control Plane Overview](https://zipline.ai/docs/setup/Overview/llms.txt): Setup
+- [Components](https://zipline.ai/docs/setup/Components/llms.txt): Setup
+- [Data Integration](https://zipline.ai/docs/setup/Data_Integration/llms.txt): Setup
+- [Developer Setup](https://zipline.ai/docs/setup/Developer_Setup/llms.txt): Setup
+- [Online Integration](https://zipline.ai/docs/setup/Online_Integration/llms.txt): Setup
+- [Fetcher API](https://zipline.ai/docs/setup/Fetcher_API/llms.txt): Setup
+- [Orchestrating Chronon](https://zipline.ai/docs/setup/Orchestration/llms.txt): Setup
+- [Chronon on Flink](https://zipline.ai/docs/setup/Flink/llms.txt): Setup
+- [Project Setup](https://zipline.ai/docs/running_on_zipline_hub/Setup/llms.txt): Test, Deploy, Serve (Zipline)
+- [Testing GroupBy and Join](https://zipline.ai/docs/running_on_zipline_hub/Test/llms.txt): Test, Deploy, Serve (Zipline)
+- [Iterating](https://zipline.ai/docs/running_on_zipline_hub/Iterate/llms.txt): Test, Deploy, Serve (Zipline)
+- [Deploying Chronon Entities](https://zipline.ai/docs/running_on_zipline_hub/Deploy/llms.txt): Test, Deploy, Serve (Zipline)
+- [Serving Chronon Data](https://zipline.ai/docs/running_on_zipline_hub/Serve/llms.txt): Test, Deploy, Serve (Zipline)
+- [Authentication](https://zipline.ai/docs/running_on_zipline_hub/Auth/llms.txt): Test, Deploy, Serve (Zipline)
+- [Multi-Environment Compile & Deploy](https://zipline.ai/docs/running_on_zipline_hub/MultiEnvironment/llms.txt): Test, Deploy, Serve (Zipline)
+- [Workflow Status API](https://zipline.ai/docs/running_on_zipline_hub/Workflow_Status_API/llms.txt): Test, Deploy, Serve (Zipline)
+- [Clear & Rerun](https://zipline.ai/docs/running_on_zipline_hub/ClearAndRerun/llms.txt): Test, Deploy, Serve (Zipline)
+- [Eval - Configuration Validation](https://zipline.ai/docs/running_on_zipline_hub/Eval/llms.txt): Test, Deploy, Serve (Zipline)
+- [Upgrades](https://zipline.ai/docs/runbooks/Upgrades/llms.txt): Runbooks (Zipline)
+- [Project Setup](https://zipline.ai/docs/test_deploy_serve/Setup/llms.txt): Test, Deploy, Serve (self-hosted)
+- [Testing GroupBy and Join](https://zipline.ai/docs/test_deploy_serve/Test/llms.txt): Test, Deploy, Serve (self-hosted)
+- [Deploying Chronon Entities](https://zipline.ai/docs/test_deploy_serve/Deploy/llms.txt): Test, Deploy, Serve (self-hosted)
+- [Serving Chronon Data](https://zipline.ai/docs/test_deploy_serve/Serve/llms.txt): Test, Deploy, Serve (self-hosted)
+- [Drift](https://zipline.ai/docs/test_deploy_serve/Drift/llms.txt): Test, Deploy, Serve (self-hosted)
+- [Observability Overview](https://zipline.ai/docs/management_in_production/Overview/llms.txt): Management in Production
+- [Data Quality](https://zipline.ai/docs/management_in_production/data_quality/llms.txt): Management in Production
+- [Failure Handling](https://zipline.ai/docs/management_in_production/failure_handling/llms.txt): Management in Production
+- [Streaming Metrics](https://zipline.ai/docs/management_in_production/streaming_metrics/llms.txt): Management in Production
+- [Metrics Reference](https://zipline.ai/docs/management_in_production/metrics/llms.txt): Management in Production
+- [Online Offline Consistency](https://zipline.ai/docs/management_in_production/Online_Offline_Consistency/llms.txt): Management in Production
+- [Python API](https://zipline.ai/docs/reference/python_api/llms.txt): Reference
+- [CLI Reference](https://zipline.ai/docs/reference/cli/llms.txt): Reference
+- [Tiled Architecture](https://zipline.ai/docs/Tiled_Architecture/llms.txt): Other
+- [Code Guidelines](https://zipline.ai/docs/Code_Guidelines/llms.txt): Other
+- [Solving Outbrain Click Prediction](https://zipline.ai/docs/Kaggle_Outbrain/llms.txt): Other
+- [Window Tiling Algorithm](https://zipline.ai/docs/window_tiling/llms.txt): Other
+
+## Blog
+
+- [Batch computation](https://zipline.ai/blog/batch-computation/llms.txt): A technical deep dive into how Zipline optimizes computation for cheap and fast batch jobs.
+- [Approaches to Streaming Features](https://zipline.ai/blog/approaches-to-streaming-features/llms.txt): Streaming feature computation remains a challenge for many teams. This article goes over various architectures, their tradeoffs, and the approach that Zipline has found to work at scale.
+- [Why AI workloads need read and write computation](https://zipline.ai/blog/why-ai-workloads-need-read-and-write-computation/llms.txt): AI platforms need to support a combination of read and write computed features/embeddings to effectively enable modern workloads.
+- [Version control for AI and ML Workflows](https://zipline.ai/blog/version-control-for-ai-and-ml-workflows/llms.txt): This post covers the challenges of iterating on existing AI systems in a safe and efficient manner, and the approach that Zipline’s platform takes to solve these challenges.

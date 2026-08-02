@@ -1,0 +1,25 @@
+generated: '2026-07-21'
+method: searched
+source: https://zipline.ai/docs/setup/Fetcher_API ; https://zipline.ai/docs/running_on_zipline_hub/Workflow_Status_API ; https://zipline.ai/docs/runbooks/Upgrades
+versioning:
+  scheme: uri-path
+  observed: [v1, v2]
+  notes: >-
+    Fetcher API exposes v1 fetch/schema endpoints and a v2 join-fetch endpoint
+    (base64 Avro payload). The Workflow Status API is versioned at /workflow/v2/.
+    Chronon entity configs are versioned by name (see Naming and Versioning docs),
+    and the `zipline` CLI takes --version / --release-tag for the engine jar.
+upgrades:
+  docs: https://zipline.ai/docs/runbooks/Upgrades
+  notes: Runbook documents platform upgrade procedure; the CLI supports --version-check to redeploy streaming jobs when the local version differs.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: No formal deprecation policy or RFC 8594 Sunset/Deprecation header support was found in the public docs.
+sla:
+  url: null
+status_page: null
+notes: >-
+  Zipline deploys fully within the customer's own cloud, so there is no public
+  multi-tenant status page or SLA page. No status.zipline.ai (DNS did not
+  resolve) and no /status page were found. Deprecation policy not published.

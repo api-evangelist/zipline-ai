@@ -1,0 +1,22 @@
+generated: '2026-07-21'
+method: searched
+host: https://zipline.ai
+documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /llms.txt
+    status: 200
+    file: ../llms/zipline-ai-llms.txt
+notes: >-
+  zipline.ai publishes an llms.txt (captured in llms/) but no /.well-known/
+  discovery documents. OAuth/OIDC discovery is deployment-specific (the JWKS
+  endpoint lives at {AUTH_URL}/api/auth/jwks on each self-hosted install), so
+  there is no provider-wide openid-configuration at the marketing host.

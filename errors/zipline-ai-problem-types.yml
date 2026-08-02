@@ -1,0 +1,41 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/zipline-ai-fetcher-openapi.yml ; openapi/zipline-ai-workflow-status-openapi.yml ; https://zipline.ai/docs/setup/Fetcher_API
+format: custom
+envelope:
+  description: >-
+    Fetcher API responses are not RFC 9457 problem+json. A successful fetch
+    returns a results[] array preserving request order; each entry carries a
+    status of "Success" or "Failure". Individual lookup failures are result
+    entries with "status": "Failure" and an "error" field. Request-level
+    failures (e.g. invalid JSON) return a top-level "errors" array.
+  success_field: results[].status == "Success"
+  item_failure_field: results[].status == "Failure" (with results[].error)
+  request_failure_field: errors[]
+problems:
+  - status: 400
+    scope: request-level
+    title: Invalid request
+    detail: Malformed request such as invalid JSON; returns a top-level errors[] array.
+    source_operation: openapi/zipline-ai-fetcher-openapi.yml#fetchJoin
+  - status: 404
+    title: Metadata not found
+    detail: Join or GroupBy name does not resolve to uploaded online metadata.
+    source_operation: openapi/zipline-ai-fetcher-openapi.yml#getJoinSchema
+  - status: 401
+    title: Unauthorized
+    detail: Missing or invalid bearer token on an auth-enabled deployment.
+    source_operation: openapi/zipline-ai-workflow-status-openapi.yml#getWorkflowStatus
+  - status: 403
+    title: Forbidden
+    detail: Caller lacks viewer access under role-based authorization.
+    source_operation: openapi/zipline-ai-workflow-status-openapi.yml#getWorkflowStatus
+  - status: 503
+    title: Authentication service unavailable
+    detail: AUTH_ENABLED=true but the JWKS endpoint is unreachable; protected routes fail closed rather than allowing unauthenticated access.
+    source_operation: openapi/zipline-ai-workflow-status-openapi.yml#getWorkflowStatus
+item_status:
+  - value: Success
+    meaning: Lookup succeeded; features present.
+  - value: Failure
+    meaning: Individual lookup failed; an error field describes the cause.

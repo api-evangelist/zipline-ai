@@ -1,0 +1,55 @@
+generated: '2026-07-21'
+method: searched
+source: https://zipline.ai/docs/running_on_zipline_hub/Auth
+docs: https://zipline.ai/docs/running_on_zipline_hub/Auth
+summary:
+  types:
+  - http
+  - oauth2
+  - openIdConnect
+  overview: >-
+    Zipline supports optional authentication to secure access to the platform.
+    Users authenticate through the frontend (OAuth or SSO); backend services
+    (Orchestration, Eval) validate requests using signed JWTs verified
+    statelessly via JWKS. The CLI authenticates with the device authorization
+    flow (RFC 8628).
+  human_login: [OAuth 2.0, SSO (OIDC), SSO (SAML)]
+  service_auth: [Bearer JWT verified via JWKS]
+  cli_auth: [RFC 8628 device authorization flow]
+providers:
+  - name: Google OAuth
+    type: oauth2
+    env: [GOOGLE_OAUTH_CLIENT_ID, GOOGLE_OAUTH_CLIENT_SECRET]
+    redirect_uri: "{AUTH_URL}/api/auth/callback/google"
+  - name: GitHub OAuth
+    type: oauth2
+    env: [GITHUB_OAUTH_CLIENT_ID, GITHUB_OAUTH_CLIENT_SECRET]
+  - name: SSO (OIDC / SAML)
+    type: openIdConnect
+    notes: Enterprise SSO via OIDC or SAML; SAML post-login redirect honors AUTH_EXTERNAL_URL behind a reverse proxy.
+schemes:
+  - name: bearerAuth
+    type: http
+    scheme: bearer
+    bearerFormat: JWT
+    description: >-
+      Short-lived JWT minted by `zipline auth get-access-token` (or issued to the
+      frontend after OAuth/SSO login). Backend services validate it statelessly
+      against the JWKS endpoint (AUTH_JWKS_URL, e.g. /api/auth/jwks). When
+      AUTH_ENABLED=true but the JWKS endpoint is unreachable, protected routes
+      return 503 rather than allowing unauthenticated access.
+    sources:
+      - openapi/zipline-ai-workflow-status-openapi.yml
+      - https://zipline.ai/docs/running_on_zipline_hub/Auth
+authorization:
+  model: role-based (RBAC)
+  notes: Workflow Status API requires viewer access when role-based authorization is enabled.
+  allowlist: AUTH_ALLOWED_PRINCIPALS restricts sign-in to specific domains or exact emails.
+config_env:
+  - AUTH_ENABLED
+  - AUTH_URL
+  - AUTH_EXTERNAL_URL
+  - AUTH_SECRET
+  - AUTH_ALLOWED_HOSTS
+  - AUTH_ALLOWED_PRINCIPALS
+  - AUTH_JWKS_URL

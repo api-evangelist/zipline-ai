@@ -1,4 +1,17 @@
 aid: zipline-ai
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/zipline-ai.png
 name: Zipline Ai
 description: Zipline Ai is a company surfaced as a portfolio company of wing-venture-capital and added
   to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment
@@ -15,12 +28,48 @@ created: '2026-07-17'
 modified: '2026-07-17'
 tags:
 - Company
-apis: []
+apis:
+- aid: zipline-ai:zipline-ai-fetch-api
+  name: Zipline Ai fetch API
+  description: The fetch API from Zipline Ai — 4 operation(s) for fetch.
+  tags:
+  - fetch
+  properties:
+  - type: OpenAPI
+    url: openapi/zipline-ai-fetch-api-openapi.yml
+- aid: zipline-ai:zipline-ai-health-api
+  name: Zipline Ai health API
+  description: The health API from Zipline Ai — 2 operation(s) for health.
+  tags:
+  - health
+  properties:
+  - type: OpenAPI
+    url: openapi/zipline-ai-health-api-openapi.yml
+- aid: zipline-ai:zipline-ai-schema-api
+  name: Zipline Ai schema API
+  description: The schema API from Zipline Ai — 5 operation(s) for schema.
+  tags:
+  - schema
+  properties:
+  - type: OpenAPI
+    url: openapi/zipline-ai-schema-api-openapi.yml
+- aid: zipline-ai:zipline-ai-workflow-api
+  name: Zipline Ai workflow API
+  description: The workflow API from Zipline Ai — 1 operation(s) for workflow.
+  tags:
+  - workflow
+  properties:
+  - type: OpenAPI
+    url: openapi/zipline-ai-workflow-api-openapi.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/zipline-ai-domain-security.yml
+- type: Authentication
+  url: authentication/zipline-ai-authentication.yml
 - type: Website
   url: https://zipline.ai/

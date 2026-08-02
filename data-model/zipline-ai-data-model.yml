@@ -1,0 +1,60 @@
+generated: '2026-07-21'
+method: searched
+source: https://zipline.ai/docs/reference/python_api ; https://zipline.ai/docs/authoring_features/GroupBy ; https://zipline.ai/docs/authoring_features/Join
+note: >-
+  Zipline/Chronon's core "data model" is its feature-authoring object graph
+  (the ai.chronon Python API), not a REST resource CRUD graph. Entities and
+  relationships below are derived from the Python API reference and the
+  authoring-features docs.
+entities:
+  - name: Source
+    description: A batch (Entity/Events) or streaming input to feature computation, wrapping a Query.
+  - name: Query
+    description: Selects/derives columns from a Source (select map, filters, time column).
+  - name: Aggregation
+    description: An operation (MAX/MIN/COUNT/LAST/last_k/approx_percentiles...) over an input column across one or more time windows, optionally bucketed.
+  - name: GroupBy
+    description: A set of Aggregations over Sources keyed by entity keys; the primary feature-definition unit. Can be online=True for serving.
+  - name: Join
+    description: Stitches multiple GroupBys (and external/derived parts) onto a left-side driver to produce training data and online feature vectors.
+  - name: StagingQuery
+    description: Arbitrary SQL to produce an intermediate table used as a Source.
+  - name: ExternalSource
+    description: Fetches features from an external REST/GraphQL service at serving time (ExternalPart on a Join).
+  - name: Derivation
+    description: A derived/renamed feature computed from other features (DerivedFeatures).
+  - name: BootstrapPart
+    description: Backfills a Join from a precomputed table to avoid recomputation.
+relationships:
+  - from: GroupBy
+    to: Source
+    type: has_many
+    via: sources
+  - from: GroupBy
+    to: Aggregation
+    type: has_many
+    via: aggregations
+  - from: Source
+    to: Query
+    type: has_one
+    via: query
+  - from: Join
+    to: GroupBy
+    type: has_many
+    via: right_parts (JoinPart)
+  - from: Join
+    to: ExternalSource
+    type: has_many
+    via: online_external_parts
+  - from: Join
+    to: Derivation
+    type: has_many
+    via: derivations
+  - from: Join
+    to: BootstrapPart
+    type: has_many
+    via: bootstrap_parts
+  - from: Join
+    to: Source
+    type: belongs_to
+    via: left

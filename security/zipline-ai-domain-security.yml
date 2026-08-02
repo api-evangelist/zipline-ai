@@ -1,0 +1,15 @@
+generated: '2026-07-21'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: zipline.ai
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep 29 18:42:45 2026 GMT
+  hsts: false
+domains:
+- domain: zipline.ai
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: false

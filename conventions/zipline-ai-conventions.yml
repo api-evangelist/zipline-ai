@@ -1,0 +1,39 @@
+generated: '2026-07-21'
+method: searched
+source: https://zipline.ai/docs/setup/Fetcher_API ; https://zipline.ai/docs/running_on_zipline_hub/Auth ; https://zipline.ai/docs/running_on_zipline_hub/Workflow_Status_API
+authentication:
+  style: Bearer JWT (optional; enabled per deployment via AUTH_ENABLED)
+  cli: RFC 8628 device authorization flow (`zipline auth login`)
+  see: authentication/zipline-ai-authentication.yml
+versioning:
+  style: uri-path
+  values: [v1, v2]
+  see: lifecycle/zipline-ai-lifecycle.yml
+request_shape:
+  batch_lookups: >-
+    Fetcher v1 fetch endpoints accept a JSON array of entity key maps — each map
+    is one lookup; the response preserves request order. This is batch-by-array,
+    not paginated.
+  path_names: >-
+    Path parameters are Chronon metadata names; URL-encode names that contain
+    path separators.
+pagination:
+  supported: false
+  notes: No cursor/offset pagination; feature fetches are batched by request array.
+idempotency:
+  supported: false
+  notes: >-
+    No idempotency-key header or contract is documented. Fetch operations are
+    reads over the online KV store (naturally idempotent); no write-idempotency
+    surface is published.
+error_envelope:
+  style: custom (results[].status Success/Failure with results[].error; top-level errors[] for request-level failures)
+  see: errors/zipline-ai-problem-types.yml
+rate_limit_signaling:
+  documented: false
+tracing:
+  request_id_header: null
+  workflow_correlation: Workflow runs are tracked by workflowId (poll via the Workflow Status API).
+data_encoding:
+  v1: JSON feature payloads
+  v2: base64-encoded Avro feature payload (/v2/fetch/join)

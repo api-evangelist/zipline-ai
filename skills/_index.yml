@@ -1,0 +1,12 @@
+generated: '2026-07-21'
+method: generated
+source: openapi/zipline-ai-fetcher-openapi.yml ; openapi/zipline-ai-workflow-status-openapi.yml
+skills:
+  - file: zipline-ai-fetch-features.md
+    name: Fetch online features for a model
+    api: openapi/zipline-ai-fetcher-openapi.yml
+    operations: [listJoins, getJoinSchema, fetchJoin, fetchGroupBy]
+  - file: zipline-ai-monitor-workflow.md
+    name: Monitor a Zipline workflow run
+    api: openapi/zipline-ai-workflow-status-openapi.yml
+    operations: [getWorkflowStatus]
