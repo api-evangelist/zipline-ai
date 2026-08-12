@@ -67,6 +67,12 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: AgentSkill
+  url: skills/zipline-ai-fetch-features.md
+- type: MCPServer
+  url: mcp/zipline-ai-mcp.yml
+- type: Overlay
+  url: overlays/zipline-ai-fetcher-overlay.yaml
 - type: DomainSecurity
   url: security/zipline-ai-domain-security.yml
 - type: Authentication
