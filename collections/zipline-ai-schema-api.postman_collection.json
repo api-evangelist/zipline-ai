@@ -1,0 +1,478 @@
+{
+  "item": [
+    {
+      "id": "0155ff6a-9f3a-4b44-86bb-704a541886e5",
+      "name": "schema",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a114de32-b8fc-43cd-b8e0-b3745ebe8fba",
+          "name": "Lists Chronon joins marked online=True",
+          "request": {
+            "name": "Lists Chronon joins marked online=True",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "joins"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fb72834b-8beb-4c63-9059-294cade09ce8",
+              "name": "List of online joins",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "joins"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "004bfd6b-ec38-4e93-b344-f6b8e4bee207",
+          "name": "Returns the online fetch schema for a join",
+          "request": {
+            "name": "Returns the online fetch schema for a join",
+            "description": {
+              "content": "Returns the Avro schemas used by online join fetching and logging.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "join",
+                ":name",
+                "schema"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) Chronon metadata name. URL-encode names that contain path separators."
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "110f1fd7-3b18-4e21-b979-df3f0298489f",
+              "name": "Join fetch schema",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "join",
+                    ":name",
+                    "schema"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Chronon metadata name. URL-encode names that contain path separators."
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b4cd8d12-b006-4085-a35c-56afbd9efcbc",
+              "name": "Join not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "join",
+                    ":name",
+                    "schema"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Chronon metadata name. URL-encode names that contain path separators."
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "601a7260-b795-4267-8e2f-b862c8c27de0",
+          "name": "Returns the online fetch schema for a GroupBy",
+          "request": {
+            "name": "Returns the online fetch schema for a GroupBy",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "groupby",
+                ":name",
+                "schema"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) Chronon metadata name. URL-encode names that contain path separators."
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c2950ed4-536a-4800-b385-805c88ae5cb8",
+              "name": "GroupBy fetch schema",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "groupby",
+                    ":name",
+                    "schema"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Chronon metadata name. URL-encode names that contain path separators."
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0282317e-5225-43e7-91ca-7608a17e6456",
+              "name": "GroupBy not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "groupby",
+                    ":name",
+                    "schema"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Chronon metadata name. URL-encode names that contain path separators."
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "558c691d-e780-4b99-8c6e-6debb6350f6c",
+          "name": "Returns online GroupBy upload status",
+          "request": {
+            "name": "Returns online GroupBy upload status",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "groupby",
+                ":name",
+                "status"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) Chronon metadata name. URL-encode names that contain path separators."
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3dfe9a8d-9d0f-41d4-99e3-da1f2382bfc1",
+              "name": "Upload status",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "groupby",
+                    ":name",
+                    "status"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Chronon metadata name. URL-encode names that contain path separators."
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b3134d44-e805-45fc-a5ee-6c200b8002c5",
+          "name": "Returns enhanced statistics for a table when stats are available",
+          "request": {
+            "name": "Returns enhanced statistics for a table when stats are available",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "stats",
+                ":tableName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "tableName",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "721b9f5c-5be4-4959-973a-31dfb3171f78",
+              "name": "Table statistics",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "stats",
+                    ":tableName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "tableName",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:9000",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "752b055e-1056-4bf8-86ac-21327976803a",
+    "name": "Zipline AI Fetcher fetch schema API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "HTTP surface of the Chronon fetcher service that powers Zipline AI online feature serving and schema inspection. These endpoints read from the online KV store and metadata uploaded during deploy, and are intended for online GroupBys and Joins. This document was generated by the API Evangelist enrichment pipeline from the provider's published documentation (https://zipline.ai/docs/setup/Fetcher_API); the provider does not publish an OpenAPI definition. Fetcher runs self-hosted within the customer's cloud, so the server host is deployment-specific.",
+      "type": "text/plain"
+    }
+  }
+}

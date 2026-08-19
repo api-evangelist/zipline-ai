@@ -1,0 +1,40 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Zipline AI Fetcher fetch health API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "health",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Health check endpoint",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:9000/ping"
+          },
+          "docs": "Health check endpoint"
+        },
+        {
+          "info": {
+            "name": "Fetcher service configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:9000/config"
+          },
+          "docs": "Fetcher service configuration"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -2,42 +2,46 @@ generated: '2026-07-21'
 method: derived
 status: candidate
 source: openapi/zipline-ai-fetcher-openapi.yml ; openapi/zipline-ai-workflow-status-openapi.yml
-note: >-
-  No official hosted/remote MCP server was found for Zipline AI (the docs
-  describe an in-product AI agent and a VS Code extension, not a published MCP
-  server). The tool list below is a candidate derived one-to-one from documented
-  HTTP operations, offered as a starting point for an agent-facing MCP surface.
+note: No official hosted/remote MCP server was found for Zipline AI (the docs describe an in-product AI
+  agent and a VS Code extension, not a published MCP server). The tool list below is a candidate derived
+  one-to-one from documented HTTP operations, offered as a starting point for an agent-facing MCP surface.
 server:
   name: zipline-ai
   transport: http
 tools:
-  - name: ping
-    description: Fetcher health check.
-    source_operation: openapi/zipline-ai-fetcher-openapi.yml#ping
-  - name: list_joins
-    description: List Chronon joins marked online.
-    source_operation: openapi/zipline-ai-fetcher-openapi.yml#listJoins
-  - name: get_join_schema
-    description: Return the online fetch schema for a join.
-    source_operation: openapi/zipline-ai-fetcher-openapi.yml#getJoinSchema
-  - name: get_groupby_schema
-    description: Return the online fetch schema for a GroupBy.
-    source_operation: openapi/zipline-ai-fetcher-openapi.yml#getGroupBySchema
-  - name: get_groupby_status
-    description: Return online GroupBy upload status.
-    source_operation: openapi/zipline-ai-fetcher-openapi.yml#getGroupByStatus
-  - name: get_table_stats
-    description: Return enhanced statistics for a table.
-    source_operation: openapi/zipline-ai-fetcher-openapi.yml#getTableStats
-  - name: fetch_groupby
-    description: Fetch features for one GroupBy given entity keys.
-    source_operation: openapi/zipline-ai-fetcher-openapi.yml#fetchGroupBy
-  - name: fetch_join
-    description: Fetch features for one join given entity keys.
-    source_operation: openapi/zipline-ai-fetcher-openapi.yml#fetchJoin
-  - name: fetch_model_transforms
-    description: Fetch model transform outputs.
-    source_operation: openapi/zipline-ai-fetcher-openapi.yml#fetchModelTransforms
-  - name: get_workflow_status
-    description: Poll a workflow run's status and node execution timeline.
-    source_operation: openapi/zipline-ai-workflow-status-openapi.yml#getWorkflowStatus
+- name: ping
+  description: Fetcher health check.
+  source_operation: openapi/zipline-ai-fetcher-openapi.yml#ping
+- name: list_joins
+  description: List Chronon joins marked online.
+  source_operation: openapi/zipline-ai-fetcher-openapi.yml#listJoins
+- name: get_join_schema
+  description: Return the online fetch schema for a join.
+  source_operation: openapi/zipline-ai-fetcher-openapi.yml#getJoinSchema
+- name: get_groupby_schema
+  description: Return the online fetch schema for a GroupBy.
+  source_operation: openapi/zipline-ai-fetcher-openapi.yml#getGroupBySchema
+- name: get_groupby_status
+  description: Return online GroupBy upload status.
+  source_operation: openapi/zipline-ai-fetcher-openapi.yml#getGroupByStatus
+- name: get_table_stats
+  description: Return enhanced statistics for a table.
+  source_operation: openapi/zipline-ai-fetcher-openapi.yml#getTableStats
+- name: fetch_groupby
+  description: Fetch features for one GroupBy given entity keys.
+  source_operation: openapi/zipline-ai-fetcher-openapi.yml#fetchGroupBy
+- name: fetch_join
+  description: Fetch features for one join given entity keys.
+  source_operation: openapi/zipline-ai-fetcher-openapi.yml#fetchJoin
+- name: fetch_model_transforms
+  description: Fetch model transform outputs.
+  source_operation: openapi/zipline-ai-fetcher-openapi.yml#fetchModelTransforms
+- name: get_workflow_status
+  description: Poll a workflow run's status and node execution timeline.
+  source_operation: openapi/zipline-ai-workflow-status-openapi.yml#getWorkflowStatus
+deployment:
+  mode: none
+  verified: derived
+  tools: 10
+  checked: '2026-08-12'
+  source: catalog MCP census

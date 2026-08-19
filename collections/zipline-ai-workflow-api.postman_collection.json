@@ -1,0 +1,244 @@
+{
+  "item": [
+    {
+      "id": "e2a6735d-7474-49d1-84f9-688d6360647b",
+      "name": "workflow",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "03d9618b-58a0-424e-a927-24ba1047c830",
+          "name": "Poll workflow state after a run has been created",
+          "request": {
+            "name": "Poll workflow state after a run has been created",
+            "description": {
+              "content": "Returns the workflow-level status and the node execution timeline for a workflow run. Requires viewer access when role-based authorization is enabled. When authentication is enabled, include a bearer token (obtainable via `zipline auth get-access-token`).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "workflow",
+                "v2",
+                ":workflowId",
+                "status"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "workflowId",
+                  "description": "(Required) Workflow ID returned by the workflow start API or shown in the Zipline Hub UI."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cf1b88c2-270d-4230-8fe5-08c62c5a5835",
+              "name": "Workflow status and node execution timeline",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "workflow",
+                    "v2",
+                    ":workflowId",
+                    "status"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "workflowId",
+                      "description": "(Required) Workflow ID returned by the workflow start API or shown in the Zipline Hub UI."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"workflowId\": \"string\",\n  \"confName\": \"string\",\n  \"mode\": \"string\",\n  \"branch\": \"string\",\n  \"user\": \"string\",\n  \"status\": \"string\",\n  \"startPartition\": \"string\",\n  \"endPartition\": \"string\",\n  \"terminalNodes\": [\n    \"string\",\n    \"string\"\n  ],\n  \"nodeExecutions\": [\n    {\n      \"nodeName\": \"string\",\n      \"nodeHash\": \"string\",\n      \"startPartition\": \"string\",\n      \"endPartition\": \"string\",\n      \"dependencies\": [\n        \"string\",\n        \"string\"\n      ],\n      \"stepRuns\": [\n        {\n          \"runId\": \"string\",\n          \"workflowId\": \"string\",\n          \"startPartition\": \"string\",\n          \"endPartition\": \"string\",\n          \"status\": \"string\",\n          \"attempt\": \"string\",\n          \"jobTrackingInfo\": {\n            \"jobUrl\": \"string\"\n          }\n        },\n        {\n          \"runId\": \"string\",\n          \"workflowId\": \"string\",\n          \"startPartition\": \"string\",\n          \"endPartition\": \"string\",\n          \"status\": \"string\",\n          \"attempt\": \"string\",\n          \"jobTrackingInfo\": {\n            \"jobUrl\": \"string\"\n          }\n        }\n      ]\n    },\n    {\n      \"nodeName\": \"string\",\n      \"nodeHash\": \"string\",\n      \"startPartition\": \"string\",\n      \"endPartition\": \"string\",\n      \"dependencies\": [\n        \"string\",\n        \"string\"\n      ],\n      \"stepRuns\": [\n        {\n          \"runId\": \"string\",\n          \"workflowId\": \"string\",\n          \"startPartition\": \"string\",\n          \"endPartition\": \"string\",\n          \"status\": \"string\",\n          \"attempt\": \"string\",\n          \"jobTrackingInfo\": {\n            \"jobUrl\": \"string\"\n          }\n        },\n        {\n          \"runId\": \"string\",\n          \"workflowId\": \"string\",\n          \"startPartition\": \"string\",\n          \"endPartition\": \"string\",\n          \"status\": \"string\",\n          \"attempt\": \"string\",\n          \"jobTrackingInfo\": {\n            \"jobUrl\": \"string\"\n          }\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b14224a1-fa57-46d9-82fd-1e34a882faff",
+              "name": "Missing or invalid bearer token",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "workflow",
+                    "v2",
+                    ":workflowId",
+                    "status"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "workflowId",
+                      "description": "(Required) Workflow ID returned by the workflow start API or shown in the Zipline Hub UI."
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "11c8e984-cdfd-4751-acc7-ffcf8fdedf0d",
+              "name": "Caller lacks viewer access",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "workflow",
+                    "v2",
+                    ":workflowId",
+                    "status"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "workflowId",
+                      "description": "(Required) Workflow ID returned by the workflow start API or shown in the Zipline Hub UI."
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5af6919c-6bfa-4d39-888c-a72a347a04af",
+              "name": "Authentication service unavailable (JWKS endpoint unreachable)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "workflow",
+                    "v2",
+                    ":workflowId",
+                    "status"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "workflowId",
+                      "description": "(Required) Workflow ID returned by the workflow start API or shown in the Zipline Hub UI."
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:9000",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "736e2e17-cb51-4e8e-af84-e782baa93442",
+    "name": "Zipline AI Fetcher fetch workflow API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "HTTP surface of the Chronon fetcher service that powers Zipline AI online feature serving and schema inspection. These endpoints read from the online KV store and metadata uploaded during deploy, and are intended for online GroupBys and Joins. This document was generated by the API Evangelist enrichment pipeline from the provider's published documentation (https://zipline.ai/docs/setup/Fetcher_API); the provider does not publish an OpenAPI definition. Fetcher runs self-hosted within the customer's cloud, so the server host is deployment-specific.",
+      "type": "text/plain"
+    }
+  }
+}

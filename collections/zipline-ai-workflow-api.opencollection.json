@@ -1,0 +1,37 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Zipline AI Fetcher fetch workflow API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "workflow",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Poll workflow state after a run has been created",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:9000/workflow/v2/:workflowId/status",
+            "params": [
+              {
+                "name": "workflowId",
+                "value": "",
+                "type": "path",
+                "description": "Workflow ID returned by the workflow start API or shown in the Zipline Hub UI."
+              }
+            ]
+          },
+          "docs": "Returns the workflow-level status and the node execution timeline for a workflow run. Requires viewer access when role-based authorization is enabled. When authentication is enabled, include a bearer token (obtainable via `zipline auth get-access-token`)."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

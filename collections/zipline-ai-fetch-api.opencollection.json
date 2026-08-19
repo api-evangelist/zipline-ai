@@ -1,0 +1,110 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Zipline AI Fetcher fetch API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "fetch",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Fetches features for one GroupBy",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:9000/v1/fetch/groupby/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Chronon metadata name. URL-encode names that contain path separators."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Fetches features for one GroupBy"
+        },
+        {
+          "info": {
+            "name": "Fetches features for one join",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:9000/v1/fetch/join/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Chronon metadata name. URL-encode names that contain path separators."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Fetches features for one join"
+        },
+        {
+          "info": {
+            "name": "Fetches model transform outputs",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:9000/v1/fetch/modeltransforms/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Chronon metadata name. URL-encode names that contain path separators."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Fetches model transform outputs"
+        },
+        {
+          "info": {
+            "name": "Fetches join features with the feature payload encoded as a base64 Avro string",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:9000/v2/fetch/join/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Chronon metadata name. URL-encode names that contain path separators."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Fetches join features with the feature payload encoded as a base64 Avro string"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

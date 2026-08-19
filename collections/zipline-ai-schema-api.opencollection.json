@@ -1,0 +1,104 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Zipline AI Fetcher fetch schema API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "schema",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Lists Chronon joins marked online=True",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:9000/v1/joins"
+          },
+          "docs": "Lists Chronon joins marked online=True"
+        },
+        {
+          "info": {
+            "name": "Returns the online fetch schema for a join",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:9000/v1/join/:name/schema",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Chronon metadata name. URL-encode names that contain path separators."
+              }
+            ]
+          },
+          "docs": "Returns the Avro schemas used by online join fetching and logging."
+        },
+        {
+          "info": {
+            "name": "Returns the online fetch schema for a GroupBy",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:9000/v1/groupby/:name/schema",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Chronon metadata name. URL-encode names that contain path separators."
+              }
+            ]
+          },
+          "docs": "Returns the online fetch schema for a GroupBy"
+        },
+        {
+          "info": {
+            "name": "Returns online GroupBy upload status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:9000/v1/groupby/:name/status",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Chronon metadata name. URL-encode names that contain path separators."
+              }
+            ]
+          },
+          "docs": "Returns online GroupBy upload status"
+        },
+        {
+          "info": {
+            "name": "Returns enhanced statistics for a table when stats are available",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:9000/v1/stats/:tableName",
+            "params": [
+              {
+                "name": "tableName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns enhanced statistics for a table when stats are available"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

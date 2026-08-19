@@ -1,0 +1,548 @@
+{
+  "item": [
+    {
+      "id": "abcce316-4047-4627-b9f2-b146b61c5ce0",
+      "name": "fetch",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b2701201-ea4f-43ee-b393-e0abf7fd03fe",
+          "name": "Fetches features for one GroupBy",
+          "request": {
+            "name": "Fetches features for one GroupBy",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "fetch",
+                "groupby",
+                ":name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) Chronon metadata name. URL-encode names that contain path separators."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"key_0\": 7290,\n    \"key_1\": true,\n    \"key_2\": 1626.845409237041\n  },\n  {\n    \"key_0\": \"string\",\n    \"key_1\": false,\n    \"key_2\": 4348.762260023059\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d5aac6bf-ea43-4254-8fa0-ab4fecf2d6e0",
+              "name": "Feature fetch results",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "fetch",
+                    "groupby",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Chronon metadata name. URL-encode names that contain path separators."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"user_id\": \"5\"\n  },\n  {\n    \"user_id\": \"5\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"results\": [\n    {\n      \"status\": \"Failure\",\n      \"entityKeys\": {\n        \"key_0\": \"string\",\n        \"key_1\": true\n      },\n      \"features\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"error\": \"string\"\n    },\n    {\n      \"status\": \"Success\",\n      \"entityKeys\": {\n        \"key_0\": true,\n        \"key_1\": \"string\"\n      },\n      \"features\": {\n        \"key_0\": 398.45009550914745,\n        \"key_1\": \"string\"\n      },\n      \"error\": \"string\"\n    }\n  ],\n  \"errors\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a860d083-1310-4c38-824b-de5395d3b288",
+              "name": "Request-level failure (e.g. invalid JSON) — returns an errors array",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "fetch",
+                    "groupby",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Chronon metadata name. URL-encode names that contain path separators."
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"user_id\": \"5\"\n  },\n  {\n    \"user_id\": \"5\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a990df31-9a1b-4d66-a865-554fd323444d",
+          "name": "Fetches features for one join",
+          "request": {
+            "name": "Fetches features for one join",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "fetch",
+                "join",
+                ":name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) Chronon metadata name. URL-encode names that contain path separators."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"key_0\": 6482.300858931744,\n    \"key_1\": true\n  },\n  {\n    \"key_0\": 7549.999005838112,\n    \"key_1\": \"string\",\n    \"key_2\": \"string\",\n    \"key_3\": 1573,\n    \"key_4\": 7053\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d6abbf4c-6e2e-46c1-88f5-7f8a19abf344",
+              "name": "Feature fetch results",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "fetch",
+                    "join",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Chronon metadata name. URL-encode names that contain path separators."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"user_id\": \"5\"\n  },\n  {\n    \"user_id\": \"5\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"results\": [\n    {\n      \"status\": \"Failure\",\n      \"entityKeys\": {\n        \"key_0\": 52.81931757737279,\n        \"key_1\": false\n      },\n      \"features\": {\n        \"key_0\": \"string\"\n      },\n      \"error\": \"string\"\n    },\n    {\n      \"status\": \"Failure\",\n      \"entityKeys\": {\n        \"key_0\": false,\n        \"key_1\": \"string\",\n        \"key_2\": false,\n        \"key_3\": 691\n      },\n      \"features\": {\n        \"key_0\": \"string\"\n      },\n      \"error\": \"string\"\n    }\n  ],\n  \"errors\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cc5deffc-ae20-46f6-86fb-c0a03bb76d51",
+              "name": "Request-level failure (e.g. invalid JSON) — returns an errors array",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "fetch",
+                    "join",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Chronon metadata name. URL-encode names that contain path separators."
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"user_id\": \"5\"\n  },\n  {\n    \"user_id\": \"5\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6f8bfee9-cd6e-4417-a3c8-8f702cf2c96b",
+          "name": "Fetches model transform outputs",
+          "request": {
+            "name": "Fetches model transform outputs",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "fetch",
+                "modeltransforms",
+                ":name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) Chronon metadata name. URL-encode names that contain path separators."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"key_0\": 6482.300858931744,\n    \"key_1\": true\n  },\n  {\n    \"key_0\": 7549.999005838112,\n    \"key_1\": \"string\",\n    \"key_2\": \"string\",\n    \"key_3\": 1573,\n    \"key_4\": 7053\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "04d16ef3-c67d-43b6-b516-50eeb4cd6572",
+              "name": "Model transform outputs",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "fetch",
+                    "modeltransforms",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Chronon metadata name. URL-encode names that contain path separators."
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"user_id\": \"5\"\n  },\n  {\n    \"user_id\": \"5\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bb79f9d6-6a17-4be3-8bc1-70260b3ca9f5",
+          "name": "Fetches join features with the feature payload encoded as a base64 Avro string",
+          "request": {
+            "name": "Fetches join features with the feature payload encoded as a base64 Avro string",
+            "description": {},
+            "url": {
+              "path": [
+                "v2",
+                "fetch",
+                "join",
+                ":name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) Chronon metadata name. URL-encode names that contain path separators."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"key_0\": 6482.300858931744,\n    \"key_1\": true\n  },\n  {\n    \"key_0\": 7549.999005838112,\n    \"key_1\": \"string\",\n    \"key_2\": \"string\",\n    \"key_3\": 1573,\n    \"key_4\": 7053\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "73d0c4da-7d1c-4bcf-aea9-9c9ae26add5d",
+              "name": "Join features with base64 Avro-encoded payload",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "fetch",
+                    "join",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Chronon metadata name. URL-encode names that contain path separators."
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"user_id\": \"5\"\n  },\n  {\n    \"user_id\": \"5\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:9000",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "f13528f2-2705-4255-a5ab-e89daff87c1a",
+    "name": "Zipline AI Fetcher fetch API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "HTTP surface of the Chronon fetcher service that powers Zipline AI online feature serving and schema inspection. These endpoints read from the online KV store and metadata uploaded during deploy, and are intended for online GroupBys and Joins. This document was generated by the API Evangelist enrichment pipeline from the provider's published documentation (https://zipline.ai/docs/setup/Fetcher_API); the provider does not publish an OpenAPI definition. Fetcher runs self-hosted within the customer's cloud, so the server host is deployment-specific.",
+      "type": "text/plain"
+    }
+  }
+}
