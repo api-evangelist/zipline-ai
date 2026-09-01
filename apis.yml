@@ -44,7 +44,7 @@ apis:
   name: Zipline Ai fetch API
   description: The fetch API from Zipline Ai — 4 operation(s) for fetch.
   tags:
-  - fetch
+  - Fetch
   tags_raw:
   - fetch
   properties:
