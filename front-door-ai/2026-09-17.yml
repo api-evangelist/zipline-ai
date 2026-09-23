@@ -1,0 +1,29 @@
+# Front Door AI Index — zipline-ai — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: zipline-ai
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: zipline.ai
+  final_host: zipline.ai
+  ownership: own
+  owner: zipline-ai
+  shares_host_with: null
+  inherited_from: null
+  verdict: scored
+  score: 25
+  host_score: 25
+  density: 43.78
+  words: 571
+  tiers:
+    agentic: 2
+    core: 21
+    model: 2
+  ambiguous: 0
+  top_terms:
+    AI: 15
+    ML: 6
+    OpenAI: 2
+    fine-tune: 1
+    inference: 1

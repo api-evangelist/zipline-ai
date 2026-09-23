@@ -1,10 +1,8 @@
 {
   "provider": "zipline-ai",
   "sources": [
-    "zipline-ai-fetch-api-openapi.yml",
-    "zipline-ai-health-api-openapi.yml",
-    "zipline-ai-schema-api-openapi.yml",
-    "zipline-ai-workflow-api-openapi.yml"
+    "_original/zipline-ai-fetcher-openapi.yml",
+    "_original/zipline-ai-workflow-status-openapi.yml"
   ],
   "outputs": [
     "zipline-ai-fetch-api-openapi.yml",
@@ -15,6 +13,16 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (2 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "zipline-ai-fetcher-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "zipline-ai-workflow-status-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "zipline-ai-fetch-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "zipline-ai-health-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "zipline-ai-schema-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "zipline-ai-workflow-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
