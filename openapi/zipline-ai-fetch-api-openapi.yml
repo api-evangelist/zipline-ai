@@ -99,14 +99,6 @@ paths:
           description: Join features with base64 Avro-encoded payload
 components:
   schemas:
-    FetchRequest:
-      type: array
-      description: A JSON array of entity key maps; each map is one lookup. Response preserves request order.
-      items:
-        type: object
-        additionalProperties: true
-        example:
-          user_id: '5'
     FetchResponse:
       type: object
       properties:
@@ -136,6 +128,14 @@ components:
         error:
           type: string
           description: Present when status is Failure
+    FetchRequest:
+      type: array
+      description: A JSON array of entity key maps; each map is one lookup. Response preserves request order.
+      items:
+        type: object
+        additionalProperties: true
+        example:
+          user_id: '5'
   parameters:
     Name:
       name: name

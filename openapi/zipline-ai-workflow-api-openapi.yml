@@ -73,25 +73,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/NodeExecution'
-    NodeExecution:
-      type: object
-      properties:
-        nodeName:
-          type: string
-        nodeHash:
-          type: string
-        startPartition:
-          type: string
-        endPartition:
-          type: string
-        dependencies:
-          type: array
-          items:
-            type: string
-        stepRuns:
-          type: array
-          items:
-            $ref: '#/components/schemas/StepRun'
     StepRun:
       type: object
       properties:
@@ -112,6 +93,25 @@ components:
           properties:
             jobUrl:
               type: string
+    NodeExecution:
+      type: object
+      properties:
+        nodeName:
+          type: string
+        nodeHash:
+          type: string
+        startPartition:
+          type: string
+        endPartition:
+          type: string
+        dependencies:
+          type: array
+          items:
+            type: string
+        stepRuns:
+          type: array
+          items:
+            $ref: '#/components/schemas/StepRun'
   securitySchemes:
     bearerAuth:
       type: http
