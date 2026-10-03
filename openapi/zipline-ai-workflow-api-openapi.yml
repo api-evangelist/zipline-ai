@@ -46,33 +46,6 @@ paths:
           description: Authentication service unavailable (JWKS endpoint unreachable)
 components:
   schemas:
-    WorkflowStatus:
-      type: object
-      properties:
-        workflowId:
-          type: string
-        confName:
-          type: string
-        mode:
-          type: string
-        branch:
-          type: string
-        user:
-          type: string
-        status:
-          type: string
-        startPartition:
-          type: string
-        endPartition:
-          type: string
-        terminalNodes:
-          type: array
-          items:
-            type: string
-        nodeExecutions:
-          type: array
-          items:
-            $ref: '#/components/schemas/NodeExecution'
     StepRun:
       type: object
       properties:
@@ -112,6 +85,33 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/StepRun'
+    WorkflowStatus:
+      type: object
+      properties:
+        workflowId:
+          type: string
+        confName:
+          type: string
+        mode:
+          type: string
+        branch:
+          type: string
+        user:
+          type: string
+        status:
+          type: string
+        startPartition:
+          type: string
+        endPartition:
+          type: string
+        terminalNodes:
+          type: array
+          items:
+            type: string
+        nodeExecutions:
+          type: array
+          items:
+            $ref: '#/components/schemas/NodeExecution'
   securitySchemes:
     bearerAuth:
       type: http
